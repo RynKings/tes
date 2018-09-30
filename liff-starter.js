@@ -205,7 +205,7 @@ function meProfile(){
             var stat = " - ";
         }
         if (stat.length > 60) {
-            var stat = "Text is too long! Max 60 words";
+            var stat = "Status Message is too long! Max 60 words";
         }
         if (tipe === 'me') {
             liff.sendMessages([{
