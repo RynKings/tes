@@ -204,8 +204,8 @@ function meProfile(){
         if (stat == null) {
             var stat = " - ";
         }
-        if (stat.length > 160) {
-            var stat = "Text is too long! Max 160 words";
+        if (stat.length > 60) {
+            var stat = "Text is too long! Max 60 words";
         }
         if (tipe === 'me') {
             liff.sendMessages([{
