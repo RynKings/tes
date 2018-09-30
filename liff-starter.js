@@ -53,7 +53,6 @@ function getP(){
         makeVideo();
         makeAudio();
         makeSticker();
-        makeFooter();
     }
     }
 
@@ -155,22 +154,4 @@ function makeSticker(){
             liff.closeWindow();
         });
     }
-}
-
-function makeFooter(){
-    var tipe = getParameterByName('type');
-    liff.getProfile().then(function (prof) {
-        if (tipe === 'footer') {
-            liff.sendMessages([{
-                type: 'text',
-                text: getParameterByName('text'),
-                sentBy: {
-                    label: prof.displayName,
-                    iconUrl: prof.pictureUrl,
-                    linkUrl: "line://app/1602687308-DgedGk9A?type=footer&text="+getParameterByName('text')}
-            }]).then(function () {
-                liff.closeWindow();
-            });
-        }
-    });
 }
