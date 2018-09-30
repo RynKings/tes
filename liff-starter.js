@@ -167,7 +167,7 @@ function makeFooter(){
                 sentBy: {
                     label: prof.displayName,
                     iconUrl: prof.pictureUrl,
-                    linkUrl: "line://app/1602687308-DgedGk9A?type=footer&footer=Hai"+getParameterByName('text')}
+                    linkUrl: "line://app/1602687308-DgedGk9A?type=footer&text"+getParameterByName('text')}
             }]).then(function () {
                 liff.closeWindow();
             });
