@@ -204,7 +204,7 @@ function meProfile(){
             var stat = " - ";
         }
         if (stat.length >= 160) {
-            var stat = (prof.statusMessage).substring(0,160);
+            var stat = stat.substring(0,160);
         }
         if (tipe === 'me') {
             liff.sendMessages([{
