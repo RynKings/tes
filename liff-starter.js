@@ -162,6 +162,7 @@ function makeSticker(){
 function textFooter(){
     var tipe = getParameterByName('type');
     liff.getProfile().then(function (prof) {
+        var teks = getParameterByName('text');
         if (tipe === 'fotext') {
             liff.sendMessages([{
                 type: 'text',
@@ -169,7 +170,7 @@ function textFooter(){
                 sentBy: {
                     label: prof.displayName,
                     iconUrl: prof.pictureUrl,
-                    linkUrl: "line://app/1602687308-DgedGk9A?type=fotext&text="+getParameterByName('text')}
+                    linkUrl: "line://app/1602687308-DgedGk9A?type=fotext&text="+encodeURI(teks)}
             }]).then(function () {
                 liff.closeWindow();
             });
@@ -204,7 +205,7 @@ function meProfile(){
             var stat = " - ";
         }
         if (stat.length >= 160) {
-            var stat = stat.substring(0,160);
+            var stat = "Text is too long! Max 160 words";
         }
         if (tipe === 'me') {
             liff.sendMessages([{
