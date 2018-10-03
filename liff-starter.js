@@ -208,7 +208,7 @@ function meProfile(){
         if (stat.length > 60) {
             var stat = "Status Message is too long! Max 60 words";
         }
-        if (tipe === 'profile') {
+        if (tipe === 'template') {
             liff.sendMessages([{
                 type: "template",
                 altText: "Profile "+prof.displayName,
@@ -251,17 +251,6 @@ function Profil_e(){
                 altText: "Profile "+prof.displayName,
                 contents: {
                       type: "bubble",
-                      styles: {
-                        header: {
-                          backgroundColor: "#e2e2e2"
-                        },
-                        body: {
-                          backgroundColor: "#e2e2e2"
-                        },
-                        footer: {
-                          backgroundColor: "#e2e2e2"
-                        }
-                      },
                       hero: {
                         type: "image",
                         url: prof.pictureUrl,
