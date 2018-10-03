@@ -297,9 +297,10 @@ function Profil_e(){
                             color: "#02afff",
                             action: {
                               type: "uri",
-                              label: "Website",
+                              label: "Web",
                               uri: "https://ari-yk.github.io/"
-                            }
+                            },
+                            flex: 1
                           },
                           {
                             type: "button",
@@ -309,7 +310,8 @@ function Profil_e(){
                               type: "uri",
                               label: "Me",
                               uri: "line://app/1602687308-DgedGk9A?type=me"
-                            }
+                            },
+                            flex: 2
                           },
                           {
                             type: "spacer",
