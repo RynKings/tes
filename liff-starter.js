@@ -238,7 +238,7 @@ function Profil_e(){
     var tipe = getParameterByName('type');
     liff.getProfile().then(function (prof) {
         var stat = prof.statusMessage;
-        var mid = prof.userId;
+        var uid = prof.userId;
         var pict = prof.pictureUrl;
         if (stat == null) {
             var stat = " - ";
@@ -303,8 +303,8 @@ function Profil_e(){
                             color: "#02afff",
                             action: {
                               type: "uri",
-                              label: "Mid",
-                              uri: "line://app/1602687308-DgedGk9A?type=fotext&text="+mid
+                              label: "User Id",
+                              uri: "line://app/1602687308-DgedGk9A?type=fotext&text="+uid
                             }
                           },
                           {
