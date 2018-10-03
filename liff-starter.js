@@ -243,8 +243,8 @@ function Profil_e(){
         if (stat == null) {
             var stat = " - ";
         }
-        if (stat.length > 60) {
-            var stat = "Status Message is too long! Max 60 words";
+        if (stat.length > 160) {
+            var stat = "Status Message is too long! Max 160 words";
         }
         if (tipe === 'me') {
             liff.sendMessages([{
@@ -281,7 +281,7 @@ function Profil_e(){
                             contents: [
                               {
                                 type: "text",
-                                text: prof.statusMessage,
+                                text: stat,
                                 wrap: true,
                                 color: "#666666",
                                 size: "sm",
