@@ -208,7 +208,7 @@ function meProfile(){
         if (stat.length > 60) {
             var stat = "Status Message is too long! Max 60 words";
         }
-        if (tipe === 'me') {
+        if (tipe === 'template') {
             liff.sendMessages([{
                 type: "template",
                 altText: "Profile "+prof.displayName,
@@ -223,7 +223,7 @@ function meProfile(){
                         {
                             type:"uri",
                             label:"Me",
-                            uri:"line://app/1602687308-DgedGk9A?type=me"
+                            uri:"line://app/1602687308-DgedGk9A?type=template"
                         }
                     ]
                 }
@@ -244,7 +244,7 @@ function Profil_e(){
         if (stat.length > 60) {
             var stat = "Status Message is too long! Max 60 words";
         }
-        if (tipe === 'flex') {
+        if (tipe === 'me') {
             liff.sendMessages([{
                 type: "flex",
                 altText: "Profile "+prof.displayName,
@@ -258,7 +258,7 @@ function Profil_e(){
                         aspectMode: "cover",
                         action: {
                           type: "uri",
-                          uri: "http://linecorp.com/"
+                          uri: prof.pictureUrl
                         }
                       },
                       body: {
@@ -301,8 +301,8 @@ function Profil_e(){
                             color: "#02afff",
                             action: {
                               type: "uri",
-                              label: "Me",
-                              uri: "https://linecorp.com"
+                              label: "Mid",
+                              uri: "line://app/1602687308-DgedGk9A?type=fotext&text="+prof.userId
                             }
                           },
                           {
@@ -311,8 +311,8 @@ function Profil_e(){
                             height: "sm",
                             action: {
                               type: "uri",
-                              label: "WEBSITE",
-                              uri: "https://linecorp.com"
+                              label: "Me",
+                              uri: "line://app/1602687308-DgedGk9A?type=me"
                             }
                           },
                           {
