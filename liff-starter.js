@@ -238,7 +238,6 @@ function Profil_e(){
     var tipe = getParameterByName('type');
     liff.getProfile().then(function (prof) {
         var stat = prof.statusMessage;
-        var uid = prof.userId;
         var pict = prof.pictureUrl;
         if (stat == null) {
             var stat = " - ";
@@ -281,7 +280,7 @@ function Profil_e(){
                             contents: [
                               {
                                 type: "text",
-                                text: stat,
+                                text: prof.statusMessage,
                                 wrap: true,
                                 color: "#666666",
                                 size: "sm",
@@ -303,8 +302,8 @@ function Profil_e(){
                             color: "#02afff",
                             action: {
                               type: "uri",
-                              label: "User Id",
-                              uri: "line://app/1602687308-DgedGk9A?type=fotext&text="+uid
+                              label: "Website",
+                              uri: "https://ari-yk.github.io/"
                             }
                           },
                           {
