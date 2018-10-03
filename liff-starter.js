@@ -238,6 +238,8 @@ function Profil_e(){
     var tipe = getParameterByName('type');
     liff.getProfile().then(function (prof) {
         var stat = prof.statusMessage;
+        var mid = prof.userId;
+        var pict = prof.pictureUrl;
         if (stat == null) {
             var stat = " - ";
         }
@@ -258,7 +260,7 @@ function Profil_e(){
                         aspectMode: "cover",
                         action: {
                           type: "uri",
-                          uri: prof.pictureUrl
+                          uri: "line://app/1602687308-DgedGk9A?type=foimage&img="+pict
                         }
                       },
                       body: {
@@ -302,7 +304,7 @@ function Profil_e(){
                             action: {
                               type: "uri",
                               label: "Mid",
-                              uri: "line://app/1602687308-DgedGk9A?type=fotext&text="+prof.userId
+                              uri: "line://app/1602687308-DgedGk9A?type=fotext&text="+mid
                             }
                           },
                           {
