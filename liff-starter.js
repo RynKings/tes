@@ -239,12 +239,6 @@ function Profil_e(){
     liff.getProfile().then(function (prof) {
         var stat = prof.statusMessage;
         var pict = prof.pictureUrl;
-        if (stat == null) {
-            var stat = " - ";
-        }
-        if (stat.length > 160) {
-            var stat = "Status Message is too long! Max 160 words";
-        }
         if (tipe === 'me') {
             liff.sendMessages([{
                 type: "flex",
