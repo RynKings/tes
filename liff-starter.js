@@ -56,6 +56,7 @@ function getP(){
         textFooter();
         imageFooter();
         meProfile();
+        Profil_e();
     }
     }
 
@@ -222,7 +223,106 @@ function meProfile(){
                         {
                             type:"uri",
                             label:"Me",
-                            uri:"line://app/1602687308-DgedGk9A?type=me"}]}
+                            uri:"line://app/1602687308-DgedGk9A?type=me"
+                        }
+                    ]
+                }
+            }]).then(function () {
+                liff.closeWindow();
+            });
+        }
+    });
+}
+
+function Profil_e(){
+    var tipe = getParameterByName('type');
+    liff.getProfile().then(function (prof) {
+        var stat = prof.statusMessage;
+        if (stat == null) {
+            var stat = " - ";
+        }
+        if (stat.length > 60) {
+            var stat = "Status Message is too long! Max 60 words";
+        }
+        if (tipe === 'flex') {
+            liff.sendMessages([{
+                type: "flex",
+                altText: "Profile "+prof.displayName,
+                contents: {
+                    type: "bubble",
+                      hero: {
+                        type: "image",
+                        url: prof.pictureUrl,
+                        size: "full",
+                        aspectRatio: "1:1",
+                        aspectMode: "cover",
+                        action: {
+                          type: "uri",
+                          uri: "http://linecorp.com/"
+                        }
+                      },
+                      body: {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                          {
+                            type: "text",
+                            text: prof.displayName,
+                            weight: "bold",
+                            size: "xl"
+                          },
+                          {
+                            type: "box",
+                            layout: "vertical",
+                            margin: "lg",
+                            spacing: "sm",
+                            contents: [
+                              {
+                                type: "text",
+                                text: prof.statusMessage,
+                                wrap: true,
+                                color: "#666666",
+                                size: "sm",
+                                flex: 5
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      footer: {
+                        type: "box",
+                        layout: "horizontal",
+                        spacing: "sm",
+                        contents: [
+                          {
+                            type: "button",
+                            style: "primary",
+                            height: "sm",
+                            color: "#02afff",
+                            action: {
+                              type: "uri",
+                              label: "Me",
+                              uri: "https://linecorp.com"
+                            }
+                          },
+                          {
+                            type: "button",
+                            style: "primary",
+                            height: "sm",
+                            action: {
+                              type: "uri",
+                              label: "WEBSITE",
+                              uri: "https://linecorp.com"
+                            }
+                          },
+                          {
+                            type: "spacer",
+                            size: "sm"
+                          }
+                        ],
+                        flex: 0
+                      }
+                    }
             }]).then(function () {
                 liff.closeWindow();
             });
