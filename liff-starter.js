@@ -335,7 +335,7 @@ function flexText(){
     if (tipe === 'ftext') {
         liff.sendMessages([{
             type: "flex",
-            altText: getParameterByName('text'),
+            altText: encodeURI(msg),
             contents: {
               type: "bubble",
               body: {
@@ -344,7 +344,7 @@ function flexText(){
                 contents: [
                   {
                     type: "text",
-                    text: getParameterByName('text'),
+                    text: encodeURI(msg),
                     wrap: true,
                     color: "#000000",
                     size: "sm",
