@@ -57,6 +57,7 @@ function getP(){
         imageFooter();
         meProfile();
         Profil_e();
+        flexText();
     }
     }
 
@@ -208,7 +209,7 @@ function meProfile(){
         if (stat.length > 60) {
             var stat = "Status Message is too long! Max 60 words";
         }
-        if (tipe === 'template') {
+        if (tipe === 'profile') {
             liff.sendMessages([{
                 type: "template",
                 altText: "Profile "+prof.displayName,
@@ -326,4 +327,34 @@ function Profil_e(){
             });
         }
     });
+}
+
+function flexText(){
+    var tipe = getParameterByName('type');
+    var msg = getParameterByName('text');
+    if (tipe === 'ftext') {
+        liff.sendMessages([{
+            type: "flex",
+            altText: getParameterByName('text'),
+            contents: {
+              type: "bubble",
+              body: {
+                type: "box",
+                layout: "vertical",
+                contents: [
+                  {
+                    type: "text",
+                    text: getParameterByName('text'),
+                    wrap: true,
+                    color: "#000000",
+                    size: "sm",
+                    flex: 5
+                  }
+                ]
+              }
+            }
+        }]).then(function () {
+            liff.closeWindow();
+        });
+    }
 }
