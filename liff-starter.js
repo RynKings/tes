@@ -338,6 +338,11 @@ function flexText(){
             altText: encodeURI(msg),
             contents: {
               type: "bubble",
+              styles: {
+                body: {
+                    backgroundColor: "#B1EF80"
+                }
+              },
               body: {
                 type: "box",
                 layout: "vertical",
