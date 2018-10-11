@@ -364,7 +364,7 @@ function bigImage(){
     if (tipe === 'bimg') {
         liff.sendMessages([{
             type: "imagemap",
-            baseUrl: "https://i.4pcdn.org/x/1491673223000.jpg",
+            baseUrl: "https://ferdays.net/ular_tangga/index.php/image/ads/default/",
             altText: "This is an imagemap",
             baseSize: {
               height: 1040,
@@ -373,7 +373,7 @@ function bigImage(){
             actions: [
               {
                   type: "uri",
-                  linkUri: "https://i.4pcdn.org/x/1491673223000.jpg",
+                  linkUri: "https://ferdays.net/ular_tangga/index.php/image/ads/default/",
                   area: {
                       x: 0,
                       y: 0,
