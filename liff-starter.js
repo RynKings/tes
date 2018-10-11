@@ -364,22 +364,22 @@ function bigImage(){
     if (tipe === 'bimg') {
         liff.sendMessages([{
             type: "imagemap",
-            baseUrl: "https://ferdays.net/ular_tangga/index.php/image/ads/default/",
-            altText: "This is an imagemap",
+            baseUrl: "https://ferdays.net/ular_tangga/index.php/image/ads/default/1040",
+            altText: "imagemap",
             baseSize: {
               height: 1040,
               width: 1040
             },
             actions: [
               {
-                  type: "uri",
-                  linkUri: "https://ferdays.net/ular_tangga/index.php/image/ads/default/",
-                  area: {
-                      x: 0,
-                      y: 0,
-                      width: 520,
-                      height: 1040
-                  }
+                type: "uri",
+                linkUri: "https://www.facebook.com",
+                area: {
+                  x: 0,
+                  y: 0,
+                  width: 520,
+                  height: 1040
+                }
               }
             ]
         }]).then(function () {
