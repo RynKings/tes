@@ -58,6 +58,7 @@ function getP(){
         meProfile();
         Profil_e();
         flexText();
+        bigImage();
     }
     }
 
@@ -331,11 +332,10 @@ function Profil_e(){
 
 function flexText(){
     var tipe = getParameterByName('type');
-    var msg = getParameterByName('text');
     if (tipe === 'ftext') {
         liff.sendMessages([{
             type: "flex",
-            altText: encodeURI(msg),
+            altText: getParameterByName('text'),
             contents: {
               type: "bubble",
               body: {
@@ -344,7 +344,7 @@ function flexText(){
                 contents: [
                   {
                     type: "text",
-                    text: encodeURI(msg),
+                    text: getParameterByName('text'),
                     wrap: true,
                     color: "#595959",
                     size: "sm",
@@ -353,6 +353,44 @@ function flexText(){
                 ]
               }
             }
+        }]).then(function () {
+            liff.closeWindow();
+        });
+    }
+}
+
+function bigImage(){
+    var tipe = getParameterByName('type');
+    if (tipe === 'bimg') {
+        liff.sendMessages([{
+            type: "imagemap",
+            baseUrl: "https://i.4pcdn.org/x/1491673223000.jpg",
+            altText: "This is an imagemap",
+            baseSize: {
+              height: 1040,
+              width: 1040
+            },
+            actions: [
+              {
+                  type: "uri",
+                  linkUri: "https://i.4pcdn.org/x/1491673223000.jpg",
+                  area: {
+                      x: 0,
+                      y: 0,
+                      width: 520,
+                      height: 1040
+                  }
+              },
+              {
+                  type: "uri",
+                  linkUri: "https://i.4pcdn.org/x/1491673223000.jpg",
+                  area: {
+                      x: 520,
+                      y: 0,
+                      width: 520,
+                      height: 1040
+                  }
+              }
         }]).then(function () {
             liff.closeWindow();
         });
