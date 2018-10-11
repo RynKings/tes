@@ -364,7 +364,7 @@ function bigImage(){
     if (tipe === 'bimg') {
         liff.sendMessages([{
             type: "imagemap",
-            baseUrl: "https://ferdays.net/ular_tangga/index.php/image/ads/default/1040",
+            baseUrl: "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/21/2017/04/11020230/1040x1040-SONGKRAN-2017-NO-TEXT.jpg",
             altText: "imagemap",
             baseSize: {
               height: 1040,
