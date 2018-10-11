@@ -380,17 +380,8 @@ function bigImage(){
                       width: 520,
                       height: 1040
                   }
-              },
-              {
-                  type: "uri",
-                  linkUri: "https://i.4pcdn.org/x/1491673223000.jpg",
-                  area: {
-                      x: 520,
-                      y: 0,
-                      width: 520,
-                      height: 1040
-                  }
               }
+            ]
         }]).then(function () {
             liff.closeWindow();
         });
