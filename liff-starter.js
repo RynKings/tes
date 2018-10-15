@@ -225,7 +225,7 @@ function meProfile(){
                         {
                             type:"uri",
                             label:"Me",
-                            uri:"line://app/1602687308-DgedGk9A?type=template"
+                            uri:"line://app/1602687308-DgedGk9A?type=profile"
                         }
                     ]
                 }
