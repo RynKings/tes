@@ -49,6 +49,7 @@ function getP(){
         });
     } else {
         makeText();
+        makeContact();
         makeImage();
         makeVideo();
         makeAudio();
@@ -162,6 +163,18 @@ function makeSticker(){
     }
 }
 
+function makeContact(){
+    liff.getProfile().then(funcion (prof) {
+        if (tipe === 'contact') {
+            liff.sendMessages([{
+               type: 'mid',
+               mid: prof.mid
+            }]).then(function () {
+                liff.closeWindow();
+            });
+        }
+    }
+}
 function textFooter(){
     var tipe = getParameterByName('type');
     liff.getProfile().then(function (prof) {
